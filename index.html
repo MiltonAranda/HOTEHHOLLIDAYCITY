@@ -152,6 +152,54 @@ img {
         height: 250px;
     }
 }
+/* --- TRATAMIENTO DE CHOQUE PARA MÓVILES --- */
+@media (max-width: 767.98px) {
+    
+    /* 1. Control total de fondos e imágenes */
+    .hero-section, 
+    .restaurant-preview, 
+    [style*="background-image"] {
+        background-size: cover !important; /* Fuerza a la imagen a cubrir sin deformarse */
+        background-position: center center !important; /* La centra para que no se corte lo importante */
+        background-attachment: scroll !important; /* Desactiva el efecto fijo que rompe los celulares */
+        height: auto !important;
+        min-height: 60vh !important; /* Le da una altura proporcional al alto del teléfono */
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    /* 2. Evitamos que los textos se salgan de la pantalla */
+    h1, .display-4, .display-5 {
+        font-size: 1.8rem !important; /* Achica los títulos gigantes */
+        line-height: 1.2 !important;
+        word-wrap: break-word !important; /* Si una palabra es muy larga, la corta para que no empuje el diseño */
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* 3. Limpieza de cajas y márgenes rebeldes */
+    .container, .container-fluid {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+        overflow: hidden !important; /* Candado para que nada respire hacia los lados */
+    }
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 4. Forzar a que los bloques vayan uno debajo del otro de forma limpia */
+    .col-md-6, .col-lg-4, .col-sm-12 {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 15px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -166,11 +214,27 @@ img {
     </nav>
 
     <header class="hero-section">
-        <div class="container">
-            <img src="Hotellogo.png" alt="Logo" style="max-width: 1000px; margin-bottom: 65px;">
-            <p class="lead">Niveles de exclusividad en el corazón de la ciudad</p>
-            <a href="#habitaciones" class="btn btn-gold">Ver Habitaciones</a>
+       <nav class="navbar navbar-dark sticky-top" style="background-color: #0a0a0a;">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <img src="Hotellogo.png" alt="Logo" style="max-width: 40px; height: auto; margin-right: 10px;">
+            <a class="navbar-brand text-gold mb-0" href="#" style="font-size: 1.1rem; font-weight: bold;">HOLIDAY CITY</a>
         </div>
+        
+        <div>
+            <a href="menu.html" class="btn btn-outline-light btn-sm border-gold text-gold" style="font-size: 0.8rem;">Menú</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center d-flex align-items-center" style="min-height: 80vh; background-image: url('AQUÍ_TU_IMAGEN_DE_FONDO.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+    <div class="container">
+        <img src="Hotellogo.png" alt="Logo" class="img-fluid" style="max-width: 280px; height: auto; margin-bottom: 30px;">
+        
+        <p class="lead text-white px-3" style="font-size: 1.1rem;">Niveles de exclusividad en el corazón de la ciudad</p>
+        <a href="#habitaciones" class="btn btn-gold mt-3">Ver Habitaciones</a>
+    </div>
+</header>
     </header>
 
     <section id="recepcion" class="py-5 bg-white">
