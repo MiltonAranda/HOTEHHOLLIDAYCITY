@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Golden Grill | Sitio Oficial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --dark: #121212; }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        /* Navbar & Botones */
+        .navbar { background-color: var(--dark); border-bottom: 2px solid var(--gold); }
+        .btn-gold { background-color: var(--gold); color: white; font-weight: bold; }
+        .btn-gold:hover { background-color: #a38245; color: white; }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Rsetaurante.jpeg') center/cover no-repeat;
+            background-size: cover; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+        }
+        
+        /* Galerías y Títulos */
+        .section-title { border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 10px; margin-bottom: 40px; text-transform: uppercase; font-weight: bold; }
+        .gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; transition: 0.3s; border: 2px solid transparent; }
+        .gallery-img:hover { border-color: var(--gold); transform: scale(1.02); }
+        
+        /* Menú Estilos */
+        .menu-category { background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); height: 100%; border-top: 4px solid var(--gold); }
+        .menu-category-dark { background: #222; border-radius: 10px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); height: 100%; border-top: 4px solid var(--gold); color: white; }
+        .menu-item { margin-bottom: 15px; border-bottom: 1px dashed #ddd; padding-bottom: 10px; }
+        .menu-item-dark { border-bottom: 1px dashed #444; }
+        .menu-item h6 { margin: 0; font-weight: bold; display: flex; justify-content: space-between; }
+        .menu-item p { margin: 0; font-size: 0.85rem; color: #666; }
+        .menu-category-dark .menu-item p { color: #aaa; }
+        .price { color: var(--gold); font-weight: bold; white-space: nowrap; margin-left: 10px; }
+        
+        /* WhatsApp Flotante */
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 30px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; color: white; transform: scale(1.1); }
+
+        /* =========================================
+           AJUSTES RESPONSIVOS PARA MÓVILES
+           ========================================= */
+        @media (max-width: 768px) {
+            .hero-section { height: 60vh; padding: 0 15px; }
+            .hero-section h1 { font-size: 2.2rem !important; }
+            .hero-section p { font-size: 1rem !important; }
+            
+            .gallery-img { height: 200px; }
+            
+            .menu-category, .menu-category-dark { padding: 15px; margin-bottom: 15px; }
+            .menu-item h6 { flex-direction: column; }
+            .price { margin-left: 0; margin-top: 5px; font-size: 1.1rem; }
+            
+            .btn-lg { padding: 10px 20px !important; font-size: 0.9rem !important; }
+            
+            .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <img src="Goldenlogo.png" alt="Logo" style="max-width: 80px; margin-bottom: 8.8px;"><a class="navbar-brand fw-bold" href="#">GOLDEN GRILL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#restaurante">Instalaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu-comida">Menú Comida</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu-bar">Menú Bar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reservas">Reservar</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section">
+    <div class="container">
+        <img src="Goldenlogo.png" alt="Logo" style="max-width: 500px; margin-bottom: 55px;">
+        <h1 class="display-3 fw-bold mb-3">RESTAURANTE GOLDEN GRILL</h1>
+        <p class="lead mb-5">Cortes premium, sabor inigualable y el mejor ambiente.</p>
+        
+        <a href="index.html" class="btn btn-outline-light btn-lg px-5 shadow-sm" style="border-radius: 50px; font-weight: bold; border-width: 2px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle me-2" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+            </svg>
+            VOLVER AL HOTEL
+        </a>
+    </div>
+</section>
+
+<section id="restaurante" class="py-5 bg-white">
+    <div class="container text-center">
+        <h2 class="section-title">Nuestro Ambiente</h2>
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <img src="Rotulos.jpeg" class="gallery-img" alt="Entrada">
+                <p class="mt-3 fw-bold fs-5">Nuestra Entrada</p>
+            </div>
+            <div class="col-md-4">
+                <img src="Barra.jpeg" class="gallery-img" alt="Barra">
+                <p class="mt-3 fw-bold fs-5">Nuestra Barra</p>
+            </div>
+            <div class="col-md-4">
+                <img src="Mesas.jpeg" class="gallery-img" alt="Mesa">
+                <p class="mt-3 fw-bold fs-5">Tu Mesa</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="menu-comida" class="py-5">
+    <div class="container">
+        <div class="text-center"><h2 class="section-title">Menú del Restaurante</h2></div>
+        
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="menu-category">
+                    <h4 class="mb-4 text-center" style="color: var(--gold);">Desayunos</h4>
+                    <div class="menu-item"><h6>Desayuno Típico <span class="price">L. 225</span></h6><p>Churrasco de res 8 oz, frijoles fritos, huevos al gusto, plátano, salsa ranchera, aguacate, queso crema, tortillas de maíz.</p></div>
+                    <div class="menu-item"><h6>Desayuno Americano <span class="price">L. 215</span></h6><p>Dos huevos al gusto, jamón o tocino, papas bravas, acompañado de panqueque.</p></div>
+                    <div class="menu-item"><h6>Omelette <span class="price">L. 180</span></h6><p>Con vegetales, queso mozzarella y salsa ranchera.</p></div>
+                    <div class="menu-item border-0"><h6>Desayuno Saludable <span class="price">L. 210</span></h6><p>Frutas de temporada, dos claras de huevos con vegetales a elección, miel de abeja, queso ricotta.</p></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="menu-category">
+                    <h4 class="mb-4 text-center" style="color: var(--gold);">Entradas Frías & Ensaladas</h4>
+                    <div class="menu-item"><h6>Ceviche Peruano <span class="price">L. 230</span></h6><p>Pescado de temporada, leche de tigre, con galletas soda.</p></div>
+                    <div class="menu-item"><h6>Carpaccio de Salmón / Res <span class="price">L. 420</span></h6><p>Con aceite de olivo, alcaparras/aderezo y jugo de limón.</p></div>
+                    <div class="menu-item"><h6>Ceviche Acapulqueño <span class="price">L. 320</span></h6><p>Mixto (pescado, camarones y caracol) en salsa roja acapulqueña.</p></div>
+                    <div class="menu-item border-0"><h6>Ensalada Caesar (Pollo / Camarones) <span class="price">L. 320</span></h6><p>Mix de lechugas escarolas, crutones, queso parmesano, aderezo ranch.</p></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="menu-category">
+                    <h4 class="mb-4 text-center" style="color: var(--gold);">Entradas Calientes</h4>
+                    <div class="menu-item"><h6>Crema de Papa <span class="price">L. 180</span></h6><p>Con queso gratinado.</p></div>
+                    <div class="menu-item"><h6>Sopa de Cebolla Francesa <span class="price">L. 220</span></h6><p>Caldo de res estilo francés con queso gratinado y pan con ajo.</p></div>
+                    <div class="menu-item"><h6>Cazuela de Mejillones <span class="price">L. 480</span></h6><p>Al ajillo con vino blanco.</p></div>
+                    <div class="menu-item"><h6>Calamares Fritos <span class="price">L. 220</span></h6><p>Aros empanizados con panko y aderezo tártara.</p></div>
+                    <div class="menu-item"><h6>Patatas Bravas / Anafre de Frijoles <span class="price">L. 140 / L. 155</span></h6><p>Patatas españolas / Anafre con chorizo y quesillo.</p></div>
+                    <div class="menu-item border-0"><h6>Chicharrones de Cerdo <span class="price">L. 230</span></h6><p>Pancita frita, guacamol, chismol, tostones.</p></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="menu-category">
+                    <h4 class="mb-4 text-center" style="color: var(--gold);">Platos Fuertes</h4>
+                    <div class="menu-item"><h6>Plato Típico - Filete de 8 oz <span class="price">L. 510</span></h6><p>Churrasco, chimichurri, arroz, chismol, ensalada o vegetales, tortillas.</p></div>
+                    <div class="menu-item"><h6>Entraña 8 oz / 16 oz <span class="price">L. 720 / L. 1,170</span></h6><p>Importada a la parrilla, elige dos acompañantes.</p></div>
+                    <div class="menu-item"><h6>Puyaso 8 oz / 16 oz <span class="price">L. 480 / L. 990</span></h6><p>Importado a la parrilla, elige dos acompañantes.</p></div>
+                    <div class="menu-item"><h6>Filete de Res en Salsa Champiñones <span class="price">L. 320</span></h6><p>10 oz de filete con dos acompañantes.</p></div>
+                    <div class="menu-item"><h6>Camarones al Ajillo o Empanizados <span class="price">L. 380</span></h6><p>Con aderezo tártara y dos acompañantes.</p></div>
+                    <div class="menu-item border-0"><h6>Salmón al Ajillo / Mostaza y Miel <span class="price">L. 640</span></h6><p>10 oz de salmón, elige dos acompañantes.</p></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="menu-category">
+                    <h4 class="mb-4 text-center" style="color: var(--gold);">Hamburguesas & Snacks</h4>
+                    <div class="menu-item"><h6>Hamburguesa de Res / Pollo <span class="price">L. 280</span></h6><p>Incluyen papas fritas y aderezos especiales.</p></div>
+                    <div class="menu-item"><h6>Costilla BBQ (10 oz) <span class="price">L. 280</span></h6><p>Ensalada de repollo, acompañado de papas fritas.</p></div>
+                    <div class="menu-item"><h6>Alitas (6 / 12 / 24) <span class="price">L. 210</span></h6><p>BBQ, Buffalo, Mango Habanero o Mostaza Miel. Con apio y papas.</p></div>
+                    <div class="menu-item"><h6>Golden Sampler <span class="price">L. 620</span></h6><p>6 alitas, dedos de queso, papas fritas y aros de calamar.</p></div>
+                    <div class="menu-item border-0"><h6>Nacho (Pollo / Res) <span class="price">P- L. 180 / R- L. 220</span></h6><p>Frijoles, guacamole, chismol, queso derretido.</p></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="menu-category" style="border-top: 4px solid #8B0000;">
+                    <h4 class="mb-4 text-center" style="color: #8B0000;">Para Compartir (Parrilladas)</h4>
+                    <div class="menu-item"><h6>Parrillada Corte Nacional <span class="price">4p: L. 1,800 | 8p: L. 3,000</span></h6><p>Res, pollo, chuleta, chorizo, frijoles, tajadas, complementos.</p></div>
+                    <div class="menu-item"><h6>Parrillada Mar y Tierra <span class="price">4p: L. 2,800 | 8p: L. 5,300</span></h6><p>Res, pollo, camarones, caracol, chorizo, y complementos.</p></div>
+                    <div class="menu-item border-0"><h6>Parrillada Mariscos <span class="price">4p: L. 2,900 | 8p: L. 5,600</span></h6><p>Pescado, caracol, camarones, mejillones y complementos.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="menu-bar" class="py-5" style="background-color: var(--dark);">
+    <div class="container">
+        <div class="text-center"><h2 class="section-title text-white">Menú Bar & Cafetería</h2></div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="menu-category-dark">
+                    <h5 class="mb-4 text-center" style="color: var(--gold);">Cocteles de la Casa</h5>
+                    <div class="menu-item menu-item-dark"><h6>Corrida Prohibida <span class="price">L. 200</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Lemon Drop <span class="price">L. 180</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Explosivo (Golden) <span class="price">L. 200</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Señorita Virgen <span class="price">L. 190</span></h6></div>
+                    <div class="menu-item menu-item-dark border-0"><h6>Baha Mama / Jager Bomb <span class="price">L. 180 / L. 150</span></h6></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="menu-category-dark">
+                    <h5 class="mb-4 text-center" style="color: var(--gold);">Clásicos & Vinos</h5>
+                    <div class="menu-item menu-item-dark"><h6>Margarita (Rocas/Frozen) <span class="price">L. 180</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Piña Colada / Daiquiri <span class="price">L. 190</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Mojito <span class="price">L. 160</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Long Island <span class="price">L. 170</span></h6></div>
+                    <div class="menu-item menu-item-dark border-0"><h6>Sangría <span class="price">Copa: L. 160 | Jarra: L. 350</span></h6></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="menu-category-dark">
+                    <h5 class="mb-4 text-center" style="color: var(--gold);">Cafés & Cervezas</h5>
+                    <div class="menu-item menu-item-dark"><h6>Cappuccino 8oz / 12oz <span class="price">L. 60 / L. 80</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Americano 8oz / 12oz <span class="price">L. 45 / L. 50</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Café Cubano (Sencillo/Doble) <span class="price">L. 90 / L. 170</span></h6></div>
+                    <div class="menu-item menu-item-dark"><h6>Latte / Macchiato <span class="price">L. 60 / L. 50</span></h6></div>
+                    <div class="menu-item menu-item-dark border-0"><h6>Cervezas (Nacional/Importada) <span class="price">L. 60 / L. 80</span></h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="reservas" class="py-5 bg-white text-center">
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">¿Listo para visitarnos?</h2>
+        <p class="lead mb-4">Asegura tu mesa en el mejor ambiente de la ciudad.</p>
+        <a href="https://wa.me/50498125445?text=Hola%20Restaurante%20Golden%20Grill,%20quisiera%20reservar%20una%20mesa" target="_blank" class="btn btn-success btn-lg px-5 py-3 shadow" style="border-radius: 50px; font-weight: bold; font-size: 1.1rem;">
+            RESERVA MESA DESDE WHATSAPP AHORA
+        </a>
+    </div>
+</section>
+
+<footer class="py-4 text-center bg-dark text-white border-top border-warning">
+    <p class="mb-0">© 2026 Restaurante Golden Grill | Tel: +504 9812-5445</p>
+</footer>
+
+<a href="https://wa.me/50498125445?text=Hola%20Restaurante%20Golden%20Grill,%20quisiera%20hacer%20una%20consulta" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607L13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+    </svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
